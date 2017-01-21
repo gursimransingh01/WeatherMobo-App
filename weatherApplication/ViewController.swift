@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  weatherApplication
 //
-//  Created by Gursimran on 2016-06-03.
+//  Created by Gursimran Singh on 2016-06-03.
 //  Copyright © 2016 gursimran. All rights reserved.
 //
 
