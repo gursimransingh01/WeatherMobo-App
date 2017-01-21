@@ -20,6 +20,8 @@
 		920B83131D20B48300405D83 /* RectangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920B83121D20B48300405D83 /* RectangleLayer.swift */; };
 		920B83151D20B49E00405D83 /* ArcLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920B83141D20B49E00405D83 /* ArcLayer.swift */; };
 		920B83171D20B4B700405D83 /* HolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920B83161D20B4B700405D83 /* HolderView.swift */; };
+		92F8C8291E34173300824F2A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F8C8281E34173300824F2A /* CoreData.framework */; };
+		92F8C82C1E3417C200824F2A /* city.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92F8C82A1E3417C200824F2A /* city.xcdatamodeld */; };
 		99573023AA29533CC9167CC0 /* Pods_weatherApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF6587D09A14B108FB4B21CF /* Pods_weatherApplication.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		920B83121D20B48300405D83 /* RectangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleLayer.swift; sourceTree = "<group>"; };
 		920B83141D20B49E00405D83 /* ArcLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcLayer.swift; sourceTree = "<group>"; };
 		920B83161D20B4B700405D83 /* HolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolderView.swift; sourceTree = "<group>"; };
+		92F8C8281E34173300824F2A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		92F8C82B1E3417C200824F2A /* city.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = city.xcdatamodel; sourceTree = "<group>"; };
 		BBE142131C92758114D3587A /* Pods-weatherApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherApplication.release.xcconfig"; path = "Pods/Target Support Files/Pods-weatherApplication/Pods-weatherApplication.release.xcconfig"; sourceTree = "<group>"; };
 		D6B367F5BC4E31457A6BB380 /* Pods-weatherApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weatherApplication/Pods-weatherApplication.debug.xcconfig"; sourceTree = "<group>"; };
 		EF6587D09A14B108FB4B21CF /* Pods_weatherApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weatherApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92F8C8291E34173300824F2A /* CoreData.framework in Frameworks */,
 				99573023AA29533CC9167CC0 /* Pods_weatherApplication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +91,7 @@
 				1858E6A31D02355400334A3B /* Assets.xcassets */,
 				1858E6A51D02355400334A3B /* LaunchScreen.storyboard */,
 				1858E6A81D02355400334A3B /* Info.plist */,
+				92F8C82A1E3417C200824F2A /* city.xcdatamodeld */,
 			);
 			path = weatherApplication;
 			sourceTree = "<group>";
@@ -93,6 +99,7 @@
 		338C73D25CD82D43FEBAAC1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92F8C8281E34173300824F2A /* CoreData.framework */,
 				EF6587D09A14B108FB4B21CF /* Pods_weatherApplication.framework */,
 			);
 			name = Frameworks;
@@ -273,6 +280,7 @@
 				920B83131D20B48300405D83 /* RectangleLayer.swift in Sources */,
 				1858E69F1D02355400334A3B /* ViewController.swift in Sources */,
 				920B830D1D20B30300405D83 /* animationView.swift in Sources */,
+				92F8C82C1E3417C200824F2A /* city.xcdatamodeld in Sources */,
 				1858E69D1D02355400334A3B /* AppDelegate.swift in Sources */,
 				920B83051D19C00F00405D83 /* Constants.swift in Sources */,
 				920B830F1D20B44D00405D83 /* OvalLayer.swift in Sources */,
@@ -438,6 +446,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		92F8C82A1E3417C200824F2A /* city.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				92F8C82B1E3417C200824F2A /* city.xcdatamodel */,
+			);
+			currentVersion = 92F8C82B1E3417C200824F2A /* city.xcdatamodel */;
+			path = city.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1858E6911D02355400334A3B /* Project object */;
 }
