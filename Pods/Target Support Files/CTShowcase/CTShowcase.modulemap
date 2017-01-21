@@ -1,0 +1,6 @@
+framework module CTShowcase {
+  umbrella header "CTShowcase-umbrella.h"
+
+  export *
+  module * { export * }
+}

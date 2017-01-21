@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ddY-WX-rey">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--Animation View-->
+        <scene sceneID="lIC-eL-EOw">
+            <objects>
+                <viewController id="ddY-WX-rey" customClass="animationView" customModule="weatherApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qHc-Ia-qhi"/>
+                        <viewControllerLayoutGuide type="bottom" id="67Z-NM-QAp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RU0-JJ-lDp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="mainScreen" id="kcf-wk-V13"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iNj-21-zRZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-423" y="108"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="weatherApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +37,572 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhI-0c-BYM">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SUt-WQ-FNI">
+                                        <rect key="frame" x="135" y="20" width="89" height="62"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r3h-IX-AMq">
+                                                <rect key="frame" x="20" y="20" width="89" height="35"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Friday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecr-c4-wh5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="89" height="35"/>
+                                                        <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="30"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Q6l-La-dP1">
+                                                <rect key="frame" x="26" y="63" width="76" height="17"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="June 2, 2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoB-At-Tix">
+                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="17"/>
+                                                        <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="14"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <variation key="heightClass=regular-widthClass=compact" axis="vertical"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="zML-4c-UGS">
+                                        <rect key="frame" x="22" y="19" width="1595" height="256"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="XDj-lC-uAF">
+                                                <rect key="frame" x="0.0" y="0.0" width="1595" height="256"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Lg1-nC-qfS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1225" height="256"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xg6-hf-L6r">
+                                                                <rect key="frame" x="0.0" y="0.0" width="518" height="256"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZMN-AO-Q2e">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="518" height="256"/>
+                                                                        <subviews>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fD6-9y-sx2">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="47" height="256"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="42º C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkp-6c-9Jm">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="47" height="239"/>
+                                                                                        <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="20"/>
+                                                                                        <color key="textColor" red="0.84061316289999999" green="0.12340125640000001" blue="0.066263403700000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="47" height="23"/>
+                                                                                        </variation>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Max" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCu-fz-bno">
+                                                                                        <rect key="frame" x="0.0" y="239" width="47" height="18"/>
+                                                                                        <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="15"/>
+                                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                                                                            <rect key="frame" x="0.0" y="23" width="47" height="18"/>
+                                                                                        </variation>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="47" id="BPG-wK-k8w"/>
+                                                                                    <constraint firstAttribute="height" constant="40" id="sTU-Bk-byT"/>
+                                                                                </constraints>
+                                                                                <variation key="default">
+                                                                                    <mask key="constraints">
+                                                                                        <exclude reference="BPG-wK-k8w"/>
+                                                                                        <exclude reference="sTU-Bk-byT"/>
+                                                                                    </mask>
+                                                                                </variation>
+                                                                                <variation key="heightClass=regular-widthClass=compact">
+                                                                                    <mask key="constraints">
+                                                                                        <include reference="BPG-wK-k8w"/>
+                                                                                        <include reference="sTU-Bk-byT"/>
+                                                                                    </mask>
+                                                                                </variation>
+                                                                            </stackView>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="cutmypic" translatesAutoresizingMaskIntoConstraints="NO" id="jPt-Xt-DWB">
+                                                                                <rect key="frame" x="47" y="0.0" width="424" height="256"/>
+                                                                            </imageView>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3Ri-aQ-GEx">
+                                                                                <rect key="frame" x="471" y="0.0" width="47" height="256"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="24º C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlf-Yg-Noo">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="47" height="24"/>
+                                                                                        <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="20"/>
+                                                                                        <color key="textColor" red="0.2035479627" green="0.3380425729" blue="0.86314315029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="47" height="23"/>
+                                                                                        </variation>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSD-6C-9YV">
+                                                                                        <rect key="frame" x="0.0" y="24" width="47" height="233"/>
+                                                                                        <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="15"/>
+                                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                                                                            <rect key="frame" x="0.0" y="23" width="47" height="18"/>
+                                                                                        </variation>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="47" id="7rg-bl-aeb"/>
+                                                                                    <constraint firstAttribute="height" constant="40" id="BGV-DP-0CH"/>
+                                                                                </constraints>
+                                                                                <variation key="default">
+                                                                                    <mask key="constraints">
+                                                                                        <exclude reference="7rg-bl-aeb"/>
+                                                                                        <exclude reference="BGV-DP-0CH"/>
+                                                                                    </mask>
+                                                                                </variation>
+                                                                                <variation key="heightClass=regular-widthClass=compact">
+                                                                                    <mask key="constraints">
+                                                                                        <include reference="7rg-bl-aeb"/>
+                                                                                        <include reference="BGV-DP-0CH"/>
+                                                                                    </mask>
+                                                                                </variation>
+                                                                            </stackView>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="350" id="KDQ-CH-jiL"/>
+                                                                            <constraint firstAttribute="width" constant="320" id="XEA-f7-cYt"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="uOq-4d-LAd"/>
+                                                                        </constraints>
+                                                                        <variation key="default">
+                                                                            <mask key="constraints">
+                                                                                <exclude reference="KDQ-CH-jiL"/>
+                                                                                <exclude reference="XEA-f7-cYt"/>
+                                                                                <exclude reference="uOq-4d-LAd"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                                            <mask key="constraints">
+                                                                                <exclude reference="KDQ-CH-jiL"/>
+                                                                                <include reference="XEA-f7-cYt"/>
+                                                                                <include reference="uOq-4d-LAd"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <variation key="heightClass=regular-widthClass=compact" alignment="center" axis="vertical"/>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillProportionally" alignment="bottom" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="XH2-1x-WEu">
+                                                                <rect key="frame" x="548" y="0.0" width="677" height="256"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="GHV-dd-Zpv">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="386" height="256"/>
+                                                                        <subviews>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="sunny" translatesAutoresizingMaskIntoConstraints="NO" id="Ync-O8-IQX">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="40" id="E9M-N4-Cpc"/>
+                                                                                    <constraint firstAttribute="width" constant="40" id="fJd-Dh-7vq"/>
+                                                                                </constraints>
+                                                                                <variation key="default">
+                                                                                    <mask key="constraints">
+                                                                                        <exclude reference="E9M-N4-Cpc"/>
+                                                                                        <exclude reference="fJd-Dh-7vq"/>
+                                                                                    </mask>
+                                                                                </variation>
+                                                                                <variation key="heightClass=regular-widthClass=compact">
+                                                                                    <mask key="constraints">
+                                                                                        <include reference="E9M-N4-Cpc"/>
+                                                                                        <include reference="fJd-Dh-7vq"/>
+                                                                                    </mask>
+                                                                                </variation>
+                                                                            </imageView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Partly Cloudy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZw-hf-seo">
+                                                                                <rect key="frame" x="281" y="0.0" width="105" height="256"/>
+                                                                                <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="17"/>
+                                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IwR-jl-zKW">
+                                                                        <rect key="frame" x="376" y="145" width="301" height="111"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="21º C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCq-JY-3gY">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="222" height="111"/>
+                                                                                <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="95"/>
+                                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zga-SK-pK4">
+                                                                                <rect key="frame" x="222" y="0.0" width="80" height="111"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Feels Like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOU-uR-1pu">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="52" height="111"/>
+                                                                                        <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="12"/>
+                                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="20º C" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QP7-8r-dIc">
+                                                                                        <rect key="frame" x="52" y="0.0" width="28" height="111"/>
+                                                                                        <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="12"/>
+                                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                        </subviews>
+                                                                        <variation key="heightClass=regular-widthClass=compact" alignment="bottom" axis="vertical"/>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <variation key="heightClass=regular-widthClass=compact" alignment="center" axis="vertical"/>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <variation key="heightClass=regular-widthClass=compact" alignment="center" axis="vertical"/>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="VIc-u4-Mam">
+                                                        <rect key="frame" x="1275" y="0.0" width="320" height="256"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N6U-5t-5r5">
+                                                                <rect key="frame" x="0.0" y="0.0" width="103" height="256"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Humidity-52" translatesAutoresizingMaskIntoConstraints="NO" id="F9q-zU-UwF">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="52" height="256"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="40" id="baL-DR-prM"/>
+                                                                            <constraint firstAttribute="width" constant="40" id="ysz-GV-NBf"/>
+                                                                        </constraints>
+                                                                        <variation key="default">
+                                                                            <mask key="constraints">
+                                                                                <exclude reference="baL-DR-prM"/>
+                                                                                <exclude reference="ysz-GV-NBf"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                                            <mask key="constraints">
+                                                                                <include reference="baL-DR-prM"/>
+                                                                                <include reference="ysz-GV-NBf"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                    </imageView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="qEu-qz-39i">
+                                                                        <rect key="frame" x="52" y="0.0" width="51" height="256"/>
+                                                                        <subviews>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f26-pC-i9G">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="34" height="20"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="65" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3q-bz-d6x">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="18" height="20"/>
+                                                                                        <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="17"/>
+                                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taC-Hp-PvH">
+                                                                                        <rect key="frame" x="18" y="0.0" width="16" height="20"/>
+                                                                                        <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="17"/>
+                                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Humidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBL-xR-YTx">
+                                                                                <rect key="frame" x="0.0" y="20" width="51" height="236"/>
+                                                                                <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="12"/>
+                                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pOm-Xd-RYF">
+                                                                <rect key="frame" x="115" y="0.0" width="97" height="256"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Wind" translatesAutoresizingMaskIntoConstraints="NO" id="Kp0-IX-2cv">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="256"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="40" id="3rk-S7-zRl"/>
+                                                                            <constraint firstAttribute="width" constant="40" id="AOR-Mp-KST"/>
+                                                                        </constraints>
+                                                                        <variation key="default">
+                                                                            <mask key="constraints">
+                                                                                <exclude reference="3rk-S7-zRl"/>
+                                                                                <exclude reference="AOR-Mp-KST"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                                            <mask key="constraints">
+                                                                                <include reference="3rk-S7-zRl"/>
+                                                                                <include reference="AOR-Mp-KST"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                    </imageView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="GMz-kZ-gzn">
+                                                                        <rect key="frame" x="50" y="0.0" width="47" height="256"/>
+                                                                        <subviews>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P9p-gT-Pnt">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="47" height="20"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="65" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6GF-Zv-rLQ">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="18" height="20"/>
+                                                                                        <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="17"/>
+                                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="kph" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WP-sK-nTK">
+                                                                                        <rect key="frame" x="18" y="0.0" width="29" height="20"/>
+                                                                                        <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="17"/>
+                                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Wind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhh-QP-wQT">
+                                                                                <rect key="frame" x="0.0" y="20" width="29" height="236"/>
+                                                                                <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="12"/>
+                                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B7G-pt-vZr">
+                                                                <rect key="frame" x="224" y="0.0" width="96" height="256"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Rain" translatesAutoresizingMaskIntoConstraints="NO" id="ENa-8F-kri">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="256"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="40" id="HSK-AD-qrc"/>
+                                                                            <constraint firstAttribute="width" constant="40" id="XM0-Wo-PMJ"/>
+                                                                        </constraints>
+                                                                        <variation key="default">
+                                                                            <mask key="constraints">
+                                                                                <exclude reference="HSK-AD-qrc"/>
+                                                                                <exclude reference="XM0-Wo-PMJ"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                                            <mask key="constraints">
+                                                                                <include reference="HSK-AD-qrc"/>
+                                                                                <include reference="XM0-Wo-PMJ"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                    </imageView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="txX-lN-ot9">
+                                                                        <rect key="frame" x="50" y="0.0" width="46" height="256"/>
+                                                                        <subviews>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IV1-cz-m1a">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="46" height="20"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="65" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnq-bd-v3j">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="18" height="20"/>
+                                                                                        <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="17"/>
+                                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="mm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRs-fy-zMq">
+                                                                                        <rect key="frame" x="18" y="0.0" width="28" height="20"/>
+                                                                                        <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="17"/>
+                                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Precip." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uuv-kc-T7T">
+                                                                                <rect key="frame" x="0.0" y="20" width="38" height="236"/>
+                                                                                <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="12"/>
+                                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="VIc-u4-Mam" firstAttribute="leading" secondItem="XDj-lC-uAF" secondAttribute="leading" id="X7h-fO-Vbk"/>
+                                                    <constraint firstAttribute="trailing" secondItem="VIc-u4-Mam" secondAttribute="trailing" id="jwz-IT-out"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="X7h-fO-Vbk"/>
+                                                        <exclude reference="jwz-IT-out"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact" alignment="bottom" axis="vertical">
+                                                    <mask key="constraints">
+                                                        <exclude reference="X7h-fO-Vbk"/>
+                                                        <exclude reference="jwz-IT-out"/>
+                                                    </mask>
+                                                </variation>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="XDj-lC-uAF" secondAttribute="trailing" id="9B2-B0-3Mw"/>
+                                            <constraint firstItem="XDj-lC-uAF" firstAttribute="leading" secondItem="zML-4c-UGS" secondAttribute="leading" id="GG5-1Z-2bg"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="9B2-B0-3Mw"/>
+                                                <exclude reference="GG5-1Z-2bg"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" alignment="center" axis="vertical" misplaced="YES">
+                                            <rect key="frame" x="40" y="248" width="320" height="315"/>
+                                        </variation>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTj-M2-Kt8">
+                                        <rect key="frame" x="0.0" y="576" width="600" height="24"/>
+                                        <color key="backgroundColor" red="0.098293697040000003" green="0.74070785979999998" blue="0.45877372929999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="6i1-Ub-r1L"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpL-nr-iis">
+                                        <rect key="frame" x="-30" y="-9" width="77" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="CPz-6s-FQe"/>
+                                            <constraint firstAttribute="width" constant="20" id="qTj-eQ-zin"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="reload"/>
+                                        <connections>
+                                            <action selector="reloadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="60V-kb-7Vk"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fL1-be-j7i">
+                                        <rect key="frame" x="140" y="719" width="120" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlL-sb-cpa">
+                                                <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="UXP-fn-T4T"/>
+                                                    <constraint firstAttribute="width" constant="40" id="h5q-ZZ-ygX"/>
+                                                </constraints>
+                                                <state key="normal" image="placeholder"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="UXP-fn-T4T"/>
+                                                        <exclude reference="h5q-ZZ-ygX"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="UXP-fn-T4T"/>
+                                                        <include reference="h5q-ZZ-ygX"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="changeCity:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xjf-28-hD5"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Ottawa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyH-kQ-dNF">
+                                                <rect key="frame" x="256" y="0.0" width="82" height="256"/>
+                                                <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="25"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="750" constant="30" id="Aef-wE-Ovw"/>
+                                            <constraint firstAttribute="width" constant="120" id="MvH-4n-Y8E"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Aef-wE-Ovw"/>
+                                                <exclude reference="MvH-4n-Y8E"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="139" y="721" width="122" height="40"/>
+                                            <mask key="constraints">
+                                                <exclude reference="Aef-wE-Ovw"/>
+                                                <exclude reference="MvH-4n-Y8E"/>
+                                            </mask>
+                                        </variation>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.10260811240000001" green="0.10260811240000001" blue="0.10260811240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="sTj-M2-Kt8" secondAttribute="trailing" id="0Kp-Yg-8xE"/>
+                                    <constraint firstItem="zML-4c-UGS" firstAttribute="top" secondItem="lhI-0c-BYM" secondAttribute="top" constant="30" id="6L9-yi-VJN"/>
+                                    <constraint firstAttribute="bottom" secondItem="sTj-M2-Kt8" secondAttribute="bottom" id="DoM-a3-4Gb"/>
+                                    <constraint firstItem="zML-4c-UGS" firstAttribute="centerY" secondItem="lhI-0c-BYM" secondAttribute="centerY" id="HMQ-ue-Qjw"/>
+                                    <constraint firstItem="NpL-nr-iis" firstAttribute="leading" secondItem="lhI-0c-BYM" secondAttribute="leading" constant="13" id="JiQ-7u-dYu"/>
+                                    <constraint firstItem="SUt-WQ-FNI" firstAttribute="centerX" secondItem="lhI-0c-BYM" secondAttribute="centerX" id="Jjs-YI-BFj"/>
+                                    <constraint firstItem="sTj-M2-Kt8" firstAttribute="top" secondItem="fL1-be-j7i" secondAttribute="bottom" constant="10" id="O0Z-O7-Qot"/>
+                                    <constraint firstItem="zML-4c-UGS" firstAttribute="centerX" secondItem="lhI-0c-BYM" secondAttribute="centerX" id="WaJ-BZ-Sbb"/>
+                                    <constraint firstItem="sTj-M2-Kt8" firstAttribute="leading" secondItem="lhI-0c-BYM" secondAttribute="leading" id="XuO-yE-j9e"/>
+                                    <constraint firstItem="NpL-nr-iis" firstAttribute="top" secondItem="lhI-0c-BYM" secondAttribute="top" constant="12" id="ZjE-41-kWO"/>
+                                    <constraint firstItem="fL1-be-j7i" firstAttribute="centerX" secondItem="lhI-0c-BYM" secondAttribute="centerX" id="bg2-sj-p6d"/>
+                                    <constraint firstItem="SUt-WQ-FNI" firstAttribute="top" secondItem="lhI-0c-BYM" secondAttribute="top" constant="8" id="mjb-0m-Me1"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="SUt-WQ-FNI"/>
+                                        <exclude reference="fL1-be-j7i"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="O0Z-O7-Qot"/>
+                                        <exclude reference="Jjs-YI-BFj"/>
+                                        <exclude reference="mjb-0m-Me1"/>
+                                        <exclude reference="6L9-yi-VJN"/>
+                                        <exclude reference="HMQ-ue-Qjw"/>
+                                        <exclude reference="WaJ-BZ-Sbb"/>
+                                        <exclude reference="bg2-sj-p6d"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="SUt-WQ-FNI"/>
+                                        <include reference="fL1-be-j7i"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="O0Z-O7-Qot"/>
+                                        <include reference="Jjs-YI-BFj"/>
+                                        <include reference="mjb-0m-Me1"/>
+                                        <exclude reference="6L9-yi-VJN"/>
+                                        <include reference="HMQ-ue-Qjw"/>
+                                        <include reference="WaJ-BZ-Sbb"/>
+                                        <include reference="bg2-sj-p6d"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lhI-0c-BYM" secondAttribute="trailing" id="2J8-M9-2bX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lhI-0c-BYM" secondAttribute="bottom" id="Kts-pt-nfA"/>
+                            <constraint firstItem="lhI-0c-BYM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZPP-OE-Lix"/>
+                            <constraint firstItem="lhI-0c-BYM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mZs-xZ-YKb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityName" destination="hyH-kQ-dNF" id="E2K-o7-HFD"/>
+                        <outlet property="currentTemp" destination="RCq-JY-3gY" id="IJw-dL-Rer"/>
+                        <outlet property="date" destination="HoB-At-Tix" id="xsR-xV-fvn"/>
+                        <outlet property="day" destination="Ecr-c4-wh5" id="ePp-IZ-UyB"/>
+                        <outlet property="descImg" destination="Ync-O8-IQX" id="WGB-fj-f0r"/>
+                        <outlet property="feelsTemp" destination="QP7-8r-dIc" id="Gxg-ep-td5"/>
+                        <outlet property="humidity" destination="s3q-bz-d6x" id="1he-3a-Jku"/>
+                        <outlet property="maxTemp" destination="bkp-6c-9Jm" id="b7X-Zv-wSL"/>
+                        <outlet property="minTemp" destination="Mlf-Yg-Noo" id="uxZ-eB-hop"/>
+                        <outlet property="preciptation" destination="gnq-bd-v3j" id="Fsq-7S-3fw"/>
+                        <outlet property="weatherDesc" destination="lZw-hf-seo" id="0rN-YM-anH"/>
+                        <outlet property="windSpeed" destination="6GF-Zv-rLQ" id="tDs-gW-ep5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="249" y="306"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Humidity-52" width="52" height="52"/>
+        <image name="Rain" width="50" height="50"/>
+        <image name="Wind" width="50" height="50"/>
+        <image name="cutmypic" width="424" height="50"/>
+        <image name="placeholder" width="256" height="256"/>
+        <image name="reload" width="64" height="64"/>
+        <image name="sunny" width="256" height="256"/>
+    </resources>
 </document>

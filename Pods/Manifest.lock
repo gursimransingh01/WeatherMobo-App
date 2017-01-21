@@ -1,0 +1,15 @@
+PODS:
+  - Alamofire (3.4.1)
+  - CTShowcase (1.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - CTShowcase (~> 1.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  CTShowcase: fd8844df7166273cdec6a044cacd336c689ca390
+
+PODFILE CHECKSUM: 7f754a1172e367a4a89d82d84d9a5ad287389cac
+
+COCOAPODS: 1.0.1
