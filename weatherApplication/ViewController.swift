@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import CTShowcase
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -18,7 +19,7 @@ class ViewController: UIViewController {
     
     var city = "Ottawa"
     
-
+    var c = false
 
     @IBAction func reloadButton(sender: AnyObject) {
         weather.downloadWeatherDetails { () -> () in
@@ -47,16 +48,30 @@ class ViewController: UIViewController {
             
             prefs.setObject(self.city, forKey: "cityName")
             
-            //let name = prefs.objectForKey("cityName") as? String
+            //Saving Data using Core Data !!
             
-            //self.weather = Weather(location: name!)
-
-            //prefs.setValue(self.cityName.text, forKey: "userCity")
+            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let context:NSManagedObjectContext=appDel.managedObjectContext
+            
+            let cityNameObj = NSEntityDescription.insertNewObjectForEntityForName("City", inManagedObjectContext: context)
+            cityNameObj.setValue(textf.text, forKey: "city")
+            
+            do{
+                try context.save()
+                self.c = true
+                print("Value stored" + textf.text!)
+                }
+                catch{
+                    print("Error in saving the city name using core data")
+                }
+            
+            //Updating the UI with the city name !!!
             
             self.weather.downloadWeatherDetails { () -> () in
-                //print("Hello")
-                self.updateUI()
+                    self.updateUI()
+                
             }
+            
             
         }))
         
@@ -89,15 +104,33 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Hello")
+        //Fecthing city name from core data
+        let appDel:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
+        let context:NSManagedObjectContext=appDel.managedObjectContext
+        
+        do{
+            let request = NSFetchRequest(entityName: "City")
+            
+            let result = try context.executeFetchRequest(request)
+            
+            print(result)
+            
+            
+            for items in result as! [NSManagedObject]{
+                city = items.valueForKey("city") as! String
+                
+                print("city name stored is " + city)
+            }
+            
+        } catch{
+            print("Retrieving failed")
+        }
         
         let prefs = NSUserDefaults.standardUserDefaults()
 
         
         timer = NSTimer.scheduledTimerWithTimeInterval(120, target: self, selector: "update", userInfo: nil, repeats: true)
         
-        
-      
         let showcase = CTShowcaseView(withTitle: "Change City", message: "Click on change location button to change City. Tap to dismiss this screen!", key: nil) { () -> Void in
             print("This closure will be executed after the user dismisses the showcase")
         }
@@ -124,16 +157,17 @@ class ViewController: UIViewController {
         weather = Weather(location: city)
         
         weather.downloadWeatherDetails { () -> () in
-            //print("Hello Ji")
-            self.updateUI()
+                
+                self.updateUI()
+                
+            
         }
        
-
-    
     }
     
     
-    func updateUI() {
+    func updateUI(){
+        
         maxTemp.text = weather.maxTemp
         minTemp.text = weather.minTemp
         windSpeed.text = weather.wind

@@ -84,27 +84,39 @@ class Weather {
         self._weatherURL = BASE_URL
     }
     
-    func downloadWeatherDetails(completed: DownloadComplete) {
+    func downloadWeatherDetails(completed: DownloadComplete){
         
         print("DID I REACH HERE")
        
         let url = NSURL(string: BASE_URL)
         
-        let city = self._cityName
+        var city = self._cityName
+        print("outside city " + city)
+       
         
-        Alamofire.request(.GET, url!, parameters: ["q": city, "key": key]).responseJSON { response in
-            let result = response.result
+        Alamofire.request(.GET, url!, parameters: ["q": city, "key": key]).validate().responseJSON { response in
             
-            //print("DID I REACH HERE 123")
-
+            let result = response.result
             
             //print(result.value?.debugDescription)
             
             if let dict = result.value as? Dictionary<String, AnyObject> {
                 
-                //print(dict)
-                //print("DID I REACH HERE 123")
-
+                print(dict)
+                print("DID I REACH HERE 123")
+                
+                if let error = dict["error"]{
+                    print("Error in city name")
+                    self._cityName = "Ottawa"
+                    city = self._cityName
+                    print("inside city " + city)
+                    self.downloadWeatherDetails{ () -> () in
+                        
+                        print("Error in City. Setting default to Ottawa")
+                        
+                    }
+                }
+                    
                 
                 if let location = dict["location"] as? Dictionary<String, AnyObject> {
                     //print(location)
@@ -219,18 +231,15 @@ class Weather {
 
                 }
                 
-               //print(self._currentTemp)
-                //print(self._minTemp)
-                //print(self._maxTemp)
-                //print(self._precipitation)
-                //print(self._wind)
-                //print(self._feelsLike)
                 
-                
+            
     }
+            
             completed()
      
-}
+        }
+  
 
 }
+    
 }
